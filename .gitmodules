@@ -1,0 +1,3 @@
+[submodule "anatole-zola"]
+	path = anatole-zola
+	url = https://github.com/longfangsong/anatole-zola
