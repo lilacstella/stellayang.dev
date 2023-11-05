@@ -1,7 +1,13 @@
 let p = document.createElement("p");
+let touch = false;
+
+if ("ontouchstart" in document.documentElement)
+    touch = true;
 // hover animation
 
 function emphasize(div) {
+    if (touch)
+        return;
     const rects = document.getElementById("wrapper").children
     div.setAttribute("expanded", "t");
     div.style = "z-index: 1";
@@ -21,16 +27,18 @@ function emphasize(div) {
 }
 
 function reset(div) {
+    if (touch)
+        return;
     div.setAttribute("expanded", "f");
     div.style = "z-index: 1";
-    
+
     if (p) {
         div.removeChild(p);
     }
 
     div.timeout = setTimeout(() => {
         div.style = "z-index: 0";
-    }, div.id == "mid" ? 750 : 1000 );
+    }, div.id == "mid" ? 750 : 1000);
 }
 
 let bgDiv = document.getElementById("bg");
@@ -55,14 +63,14 @@ function changePosition() {
         bgDiv.style.left = position + "vw";
     else if (left_travel < 0)
         bgDiv.style.right = position + "vw";
-    else 
+    else
         bgDiv.style.left = "0%";
 
     if (top_travel > 0)
         bgDiv.style.top = position + "vh";
     else if (top_travel < 0)
         bgDiv.style.bottom = position + "vh";
-    else 
+    else
         bgDiv.style.top = "0%";
 }
 if (window.innerWidth > 1000) {
