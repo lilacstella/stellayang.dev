@@ -104,7 +104,3 @@ body {
 #wrapper>div[expanded="t"] {
     width: 100%;
 }
-
-@media (min-height: 680px), screen and (orientation: portrait) {
-
-}

@@ -1,0 +1,76 @@
+/* terminal window */
+
+.window {
+    width: 80%;
+    margin: 0 auto 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 0.25rem 0.5rem #12181e;
+    border-radius: 0 0 0.1rem 0.1rem;
+}
+
+.bar {
+    background: #191919;
+    height: 36px;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.btn {
+    background: #f6b73e;
+    position: relative;
+    margin-left: 38px;
+    top: 12px;
+}
+
+.btn::before,
+.btn::after,
+.btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    display: block;
+}
+
+.btn::before,
+.btn::after {
+    content: " ";
+    position: absolute;
+}
+
+.btn::before {
+    background: #f55551;
+    margin-left: -20px;
+}
+
+.btn::after {
+    background: #32c146;
+    margin-left: 20px;
+}
+
+.window-content {
+    background: #232323;
+    padding: 20px;
+}
+
+.comment {
+    opacity: .5;
+}
+
+.window-content .var {
+    color: #0081a7;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.window-content .key {
+    color: #f07167;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.window-content .bracket {
+    color: #fed9b7;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.window-content .curly {
+    color: #00afb9;
+    background-color: rgba(0, 0, 0, 0);
+}

@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+
+/* clear top left */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2e303d;
+}
+
+/* nav bar */
+#topnav {
+    font-family: 'Space Mono', monospace;
+    background-color: #2b2b2b;
+    overflow: hidden;
+    z-index: 5;
+}
+
+#topnav a#active{
+    background-color: #0081a7;
+}
+
+#topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+#topnav a:hover {
+    background-color: #fed9b7;
+    color: black;
+}
+
+#topnav div {
+    float: right;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+#body {
+    padding-top: 45px;
+}
+
+
+/* the switch */
+#switch {
+    position: relative;
+    /* display: inline-block; */
+    width: 40px;
+    height: 23px;
+    padding: 3px;
+    float: right;
+}
+
+#switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0081a7;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 23px;
+    width: 23px;
+    left: 3px;
+    top: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: white;
+}
+
+input:checked+.slider:before {
+    transform: translateX(17px);
+}
+
+.slider.round {
+    border-radius: 25px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* actual page */
+#body {
+    background-color: #2e303d;
+    color: #f2f2f2;
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+
+    /* border-style: solid;
+    border-color: white; */
+    display: flex;
+}
+
+.col {
+    float: left;
+    /* border for testing */
+    /* border-style: solid;
+    border-color: white; */
+}
+
+.left {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 0rem; */
+
+    /* make the right side border white for column divider*/
+    border-right-style: solid;
+    border-right-color: white;
+}
+
+.left h3 {
+    text-align: left;
+}
+
+.right {
+    /* width: 19.3%; */
+    width: 25%;
+    font-size: 150px;
+    overflow-inline: auto;
+    overflow-y: hidden;
+
+    background-color: #2e303d;
+    /* margin: 0rem; */
+    /* font-size: clamp(3rem, 10vw, 10rem); */
+    color: white;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    letter-spacing: 50px;
+    overflow: hidden;
+
+}
+
+.right>.wall {
+    margin: 0;
+    opacity: 0.75;
+    text-shadow: 10px 5px 5px rgba(102, 102, 102, 0.75);
+    line-height: 1;
+}
+
+.right>.wall.alt {
+    margin-left: -0.5em;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.left.col a {
+    text-decoration: none;
+    text-align: center;
+
+    position: relative;
+    display: inline-block;
+    margin: 16px;
+    padding: 8px 16px;
+    border-width: 4px;
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: 500;
+    
+    border-style: solid;
+    border-color: white;
+    background-color: #2e303d;
+    color: white;
+}
+
+.left.col a:hover {
+    background-color: white;
+    color: black;
+}
+
+#socials {
+    display: flex;
+}
+
+#socials>p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#paragraph {
+    width: 80%;
+}
+
+.subheading {
+    margin-top: -2.5%; 
+    opacity: .8;
+}
+
+.box.special li,p{
+    text-align: left;
+}
+
+#two-col {
+    width: 90%;
+}
+
+#two-col > .col {
+    flex: 1;
+}
+
+.box.special {
+    text-align: center;
+}
+
+.box {
+    background-color: #232323;
+    border-radius: 6px;
+    box-shadow: 0 2px 0 0 #e5e5e5;
+    margin: 0 0 2em 0;
+    padding: 3em;
+}
+
+section {
+    display: block;
+    border: 0;
+    color: white;
+    letter-spacing: -0.015em;
+}
+
+.box .image.featured img {
+    border-radius: 6px 6px 0 0;
+    width: 45em;
+    object-fit: cover;
+}
+
+.actions.special {
+    list-style-type: none;
+}
