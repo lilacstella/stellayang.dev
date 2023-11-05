@@ -65,5 +65,6 @@ function changePosition() {
     else 
         bgDiv.style.top = "0%";
 }
-
-setInterval(changePosition, 60);
+if (window.innerWidth > 1000) {
+    setInterval(changePosition, 60);
+}
