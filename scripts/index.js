@@ -53,3 +53,8 @@ function reset(div) {
     }, div.id == "mid" ? 750 : 1000);
 }
 
+document.addEventListener("DOMContentLoaded", (event) => {
+    // [0, 8) 
+    const bg_dir = Math.floor(Math.random() * 8);
+    document.getElementById("frame").setAttribute("bg", bg_dir);
+});

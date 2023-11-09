@@ -12,7 +12,17 @@ body {
     background-color: #0081a7;
 }
 
-@keyframes background-pan {
+@keyframes background-pan-0 {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 0% -400%;
+    }
+}
+
+@keyframes background-pan-1 {
     from {
         background-position: 0% 0%;
     }
@@ -21,6 +31,67 @@ body {
         background-position: -200% -200%;
     }
 }
+
+@keyframes background-pan-2 {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: -400% 0%;
+    }
+}
+
+@keyframes background-pan-3 {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: -200% 200%;
+    }
+}
+
+@keyframes background-pan-4 {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 0% 400%;
+    }
+}
+
+@keyframes background-pan-5 {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 200% 200%;
+    }
+}
+
+@keyframes background-pan-6 {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 400% 0%;
+    }
+}
+
+@keyframes background-pan-7 {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 200% -200%;
+    }
+}
+
 
 #frame {
     left: 0%;
@@ -39,7 +110,43 @@ body {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2.5px, transparent 8%);
     background-size: 50px 50px;
     background-position: 0% 0%;
-    animation: background-pan 100s linear infinite;
+    animation-duration: 100s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#frame[bg="0"] {
+    animation-name: background-pan-0;
+}
+
+#frame[bg="1"] {
+    animation-name: background-pan-1;
+}
+
+#frame[bg="2"] {
+    animation-name: background-pan-2;
+}
+
+#frame[bg="3"] {
+    animation-name: background-pan-3;
+}
+
+#frame[bg="4"] {
+    animation-name: background-pan-4;
+}
+
+#frame[bg="5"] {
+    animation-name: background-pan-5;
+}
+
+#frame[bg="6"] {
+    animation-name: background-pan-6;
+}
+
+#frame[bg="7"] {
+    animation-name: background-pan-7;
+}
+
 }
 
 #wrapper {
