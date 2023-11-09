@@ -1,8 +1,20 @@
 let p = document.createElement("p");
 let touch = false;
 
-if ("ontouchstart" in document.documentElement)
+if ("ontouchstart" in document.documentElement) {
     touch = true;
+    document.addEventListener("DOMContentLoaded", (event) => {
+        let p = document.createElement("p");
+        p.textContent = "PROJECTS";
+        document.getElementById("left").appendChild(p);
+        p = document.createElement("p");
+        p.textContent = "BLOG";
+        document.getElementById("mid").appendChild(p);
+        p = document.createElement("p");
+        p.textContent = "STELLA";
+        document.getElementById("right").appendChild(p);
+    });
+}
 // hover animation
 
 function emphasize(div) {
