@@ -41,38 +41,3 @@ function reset(div) {
     }, div.id == "mid" ? 750 : 1000);
 }
 
-let bgDiv = document.getElementById("bg");
-let position = 0;
-let left_travel = Math.floor(Math.random() * 3) - 1;
-let top_travel = Math.floor(Math.random() * 3) - 1;
-if (left_travel == 0 && top_travel == 0)
-    top_travel = 1;
-console.log(left_travel, top_travel);
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    bgDiv = document.getElementById("bg");
-});
-
-function changePosition() {
-    // Update the position
-    position = (position + 100.1) % 100 - 100;
-
-    // Set the new position
-    if (left_travel > 0)
-        bgDiv.style.left = position + "vw";
-    else if (left_travel < 0)
-        bgDiv.style.right = position + "vw";
-    else
-        bgDiv.style.left = "0%";
-
-    if (top_travel > 0)
-        bgDiv.style.top = position + "vh";
-    else if (top_travel < 0)
-        bgDiv.style.bottom = position + "vh";
-    else
-        bgDiv.style.top = "0%";
-}
-if (window.innerWidth > 1000) {
-    setInterval(changePosition, 60);
-}
