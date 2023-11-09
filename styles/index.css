@@ -147,6 +147,10 @@ body {
     animation-name: background-pan-7;
 }
 
+@media (prefers-reduced-motion) {
+    #frame {
+        animation-duration: 300s;
+    }
 }
 
 #wrapper {
