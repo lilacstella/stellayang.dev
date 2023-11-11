@@ -9,7 +9,7 @@ body {
 
 /* active home button */
 #topnav a.active {
-    background-color: #0081a7;
+    background-color: var(--accent-1);
 }
 
 @keyframes background-pan-0 {
@@ -105,9 +105,7 @@ body {
 
     overflow: hidden;
 
-    background-color: #2e303d;
-
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2.5px, transparent 8%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2.5px, transparent 8%), var(--bg);
     background-size: 50px 50px;
     background-position: 0% 0%;
     animation-duration: 100s;
@@ -194,19 +192,19 @@ body {
 
 #wrapper>div#left {
     left: 0%;
-    background-color: #BDE0FE;
+    background-color: var(--accent-1);
     transition-duration: 1000ms;
 }
 
 #wrapper>div#mid {
     left: 35%;
-    background-color: #A2D2FF;
+    background-color: var(--accent-2);
     transition-duration: 750ms;
 }
 
 #wrapper>div#right {
     left: 70%;
-    background-color: #FFC8DD;
+    background-color: var(--accent-3);
     transition-duration: 1000ms;
 }
 
