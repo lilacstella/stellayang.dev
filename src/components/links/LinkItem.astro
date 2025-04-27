@@ -1,0 +1,55 @@
+---
+interface Props {
+    title: string;
+    description?: string;
+    url: string;
+    icon: string | undefined;
+}
+
+const { title, description, url, icon } = Astro.props;
+
+const formattedURL = (url: string) => url.replace(/^https?:\/\//, '');
+
+// Create Icon from either specific custom icon or website favicon based on the url
+const getIconImage = () => {
+    if (icon == null || icon === '') {
+        return `https://api.faviconkit.com/${formattedURL(url)}/64`;
+    }
+
+    return `/icons/${icon}`;
+};
+---
+
+{/* Desktop View Link */}
+<a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="hidden sm:flex items-center space-x-4 p-4 transition bg-gray-50 dark:bg-zinc-700 border dark:border-zinc-600 rounded-3xl shadow-sm hover:shadow-md dark:hover:shadow-xl hover:cursor-pointer"
+    aria-label={`Open link in new page for ${title}`}
+>
+    <img class="w-12" src={getIconImage()} alt={`${title} icon`} />
+    <div class="flex flex-col justify-center space-y-1">
+        <h3 class="text-xl font-bold dark:text-zinc-100">{title}</h3>
+        <p class="text-sm dark:text-zinc-100">{description}</p>
+    </div>
+</a>
+
+{/* Mobile View Link */}
+<a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="block sm:hidden p-4 transition bg-gray-50 border rounded-3xl shadow-sm hover:shadow-md hover:cursor-pointer"
+    aria-label={`Open link in new page for ${title}`}
+>
+    <div class="flex items-center space-x-2.5">
+        <img
+            class="w-7 h-7"
+            src={`https://api.faviconkit.com/${formattedURL(url)}/64`}
+            alt={`${title} icon`}
+        />
+        <h3 class="text-2xl font-bold break-words">{title}</h3>
+    </div>
+    <p class="text-sm mt-2 break-words">{description}</p>
+</a>

@@ -1,0 +1,17 @@
+---
+interface Props {
+    imageSrc: string;
+}
+
+const { imageSrc } = Astro.props;
+---
+
+{
+    imageSrc !== '' && (
+        <img
+            class="w-28 h-28 rounded-full object-cover shadow-sm border dark:border-zinc-600"
+            src={`/${imageSrc}`}
+            alt="Profile"
+        />
+    )
+}

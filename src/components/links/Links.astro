@@ -1,0 +1,25 @@
+---
+import { LINKS } from '../../content';
+import LinkItem from './LinkItem.astro';
+import LinksHeader from './LinksHeader.astro';
+---
+
+<div class="flex flex-col space-y-12 w-full lg:w-2/3 xl:w-1/2">
+    {
+        LINKS.map((section) => (
+            <div>
+                <LinksHeader sectionTitle={section.sectionTitle} />
+                <div class="flex flex-col gap-y-4">
+                    {section.links.map((link) => (
+                        <LinkItem
+                            title={link.title}
+                            description={link.description}
+                            url={link.url}
+                            icon={link.icon}
+                        />
+                    ))}
+                </div>
+            </div>
+        ))
+    }
+</div>

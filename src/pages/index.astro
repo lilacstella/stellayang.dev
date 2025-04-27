@@ -1,37 +1,42 @@
 ---
-const stuff = await Astro.glob('./stuff/*.md');
+import Banner from '../components/banner/Banner.astro';
+import Profile from '../components/profile/Profile.astro';
+import Links from '../components/links/Links.astro';
+import { THEME, TITLE } from '../content';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Stella's website</title>
-	</head>
-	<body>
-		<div>
-			<h1>STELLA YANG</h1>
-			name sketch being drawn to appear
-		</div>
-		<div>
-			<h2>projects</h2> 
-			<div>
-				horizontal scrolling gallery
-			</div>
-		</div>
-		<div>
-			<h2>stuff.</h2>
-			<ul>
-				{stuff.map((post) => (
-				  <li>
-					<a href={post.url}>
-					  {post.frontmatter.title} - {post.frontmatter.date}
-					</a>
-				  </li>
-				))}
-			  </ul>
-		</div>
-	</body>
+<html lang="en" class={THEME}>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{TITLE} | Linksplash</title>
+    </head>
+    <body class="bg-zinc-100 dark:bg-zinc-800">
+        <Banner />
+        <div class="absolute top-28 w-full flex flex-col items-center">
+            <Profile />
+            <div class="mt-12 mb-24 px-6 flex flex-col items-center w-full">
+                <Links />
+            </div>
+        </div>
+    </body>
 </html>
+
+<style is:global>
+    @font-face {
+        font-family: 'Nunito';
+        src: url('/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Sora';
+        src: url('/fonts/Sora-VariableFont_wght.ttf') format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+    }
+</style>

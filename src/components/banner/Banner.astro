@@ -1,0 +1,12 @@
+---
+import { TITLE, BANNER } from "../../content";
+
+const isBannerColorCode = typeof BANNER === 'string' && BANNER.trim().startsWith('#');
+const baseStyles = "w-full h-80";
+---
+
+{
+    isBannerColorCode 
+    ? <div class={`${baseStyles}`} style={`background-color: ${BANNER};`}><span class="sr-only">Colored banner</span></div>
+    : <img class={`${baseStyles} object-cover`} src={`/${BANNER}`} alt={`${TITLE} banner`} />
+}
