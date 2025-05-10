@@ -52,7 +52,7 @@ export const LINKS: T.Links[] = [
             {
                 title: 'GitHub',
                 description: 'See my project work and contributions',
-                url: 'https://github.com',
+                url: 'https://github.com/lilacstella',
                 icon: 'github-mark.svg'
             },
             {
