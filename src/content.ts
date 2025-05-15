@@ -58,7 +58,7 @@ export const LINKS: T.Links[] = [
             {
                 title: 'Resume',
                 description: 'Check out my resume',
-                url: 'Stella Yang ATS Resume.pdf',
+                url: 'Stella Yang Resume.pdf',
                 icon: 'resume.png'
             },
             {
